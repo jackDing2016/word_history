@@ -1,4 +1,6 @@
 #include "word_history.h"
+
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,14 +11,19 @@ arraylist *getallhistory() {
     char *p;
     p = word;
     char c;
+    bool isstore = true;
     while ((c = fgetc(f)) != EOF) {
-	if (c == '\n') {
+	if (c == ' ') {
 	    *p = '\0';
 	    char *wordtosave = calloc(30, sizeof(char));
 	    strcpy(wordtosave, word);
 	    arraylist_add(al, wordtosave);
 	    p = word;
-	} else {
+	    isstore = false;
+	}
+	if (c == '\n') isstore = true;
+
+	if (isstore && (c != '\n')) {
 	    *p++ = c;
 	}
     }
