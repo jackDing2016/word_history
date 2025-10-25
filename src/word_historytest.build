@@ -1,0 +1,1 @@
+gcc word_historytest.c word_history.c /home/jack/develop/c/lib/datastructs-c/arraylist.c /home/jack/develop/c/lib/stringutil.c /home/jack/develop/c/lib/string.c /home/jack/develop/c/word_parse/temp/wordutil_v_2.c /home/jack/develop/c/lib/fileutil.c /home/jack/develop/c/lib/dateutil.c wordrecord.c
